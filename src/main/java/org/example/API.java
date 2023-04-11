@@ -14,7 +14,7 @@ public class API {
     static ArrayList<Article> articleList = new ArrayList<>();
 
    public static void API(){
-       String apiUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=football&api-key=b2JYBgK2wKMVQK7Lq5Uzh4Yfzh9UboMN";
+       String apiUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + Main.category + "&api-key=b2JYBgK2wKMVQK7Lq5Uzh4Yfzh9UboMN";
        try {
            URL url = new URL(apiUrl);
            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -51,6 +51,7 @@ public class API {
                System.out.println("");
            }
            articleList.add(article);
+           JDBC.articaleTable();
        } catch (Exception e) {
            e.printStackTrace();
        }
