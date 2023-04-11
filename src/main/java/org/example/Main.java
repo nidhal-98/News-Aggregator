@@ -30,6 +30,7 @@ public class Main {
 
             System.out.print("Enter Category for Searching:  ");
             categorySearch = sc.next();
+            JDBC.searchSQL();
         }
     }
 }

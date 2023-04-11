@@ -85,25 +85,20 @@ public class JDBC {
             while (resultSet.next()) {
 
                 String Article_Title = resultSet.getString("Article_Title");
-                //System.out.println(alpha_two_code);
 
                 String Author = resultSet.getString("Author");
-                //System.out.println(name);
 
                 String Article_Date = resultSet.getString("Article_Date");
-                //System.out.println(country);
 
                 String Category = resultSet.getString("Category");
-                //System.out.println(domains);
 
                 String Content = resultSet.getString("Content");
-                //System.out.println(web_pages);
 
                 System.out.print("\tArticle Title: " + Article_Title);
                 System.out.print("\n\tAuthor: " + Author);
                 System.out.print("\n\tArticle Date: " + Article_Date);
-                System.out.print("\n\tUniversity State-Province: " + Category);
-                System.out.print("\n\tUniversity Domains: " + Content);
+                System.out.print("\n\tCategory: " + Category);
+                System.out.print("\n\tContent: " + Content);
                 System.out.println("\n -------------------------------------------------------------------------------------------");
             }
 
