@@ -98,8 +98,11 @@ public class JDBC {
                 System.out.print("\n\tAuthor: " + Author);
                 System.out.print("\n\tArticle Date: " + Article_Date);
                 System.out.print("\n\tCategory: " + Category);
-                System.out.print("\n\tContent: " + Content);
-                System.out.println("\n -------------------------------------------------------------------------------------------");
+                System.out.println("\n\tContent: " + Content);
+                for(int j=-9; j<Content.length(); j++){
+                    System.out.print("-");
+                }
+                System.out.println("");
             }
 
             statement.close();
