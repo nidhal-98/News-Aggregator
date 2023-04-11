@@ -4,13 +4,10 @@ import java.util.HashMap;
 
 public class docs {
 
-    String abstract1;
-    String web_url;
-    String snippet;
+    headline headline = new headline();
+    byline byline = new byline();
+    String pub_date;
+    String section_name;
     String lead_paragraph;
-    String print_section;
-    String print_page;
-    String source;
-    HashMap<String, multimedia> multimedia;
 
 }
