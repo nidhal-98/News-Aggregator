@@ -23,14 +23,32 @@ public class Main {
         databasePass = sc.next();
 
         while(menue){
-            System.out.print("Enter Category:  ");
-            category = sc.next();
 
-            API.API();
+            System.out.println(" -----------");
+            System.out.println("| Main Menu |");
+            System.out.println(" -----------");
+            System.out.println("[1] Search for Articles by Category");
+            System.out.println("[2] Search for Articles by Category from SQL Server");
+            System.out.println("[3] Exit");
+            System.out.println("---------------------------------------------------");
+            System.out.print("Enter Number:  ");
+            String option = sc.next();
 
-            System.out.print("Enter Category for Searching:  ");
-            categorySearch = sc.next();
-            JDBC.searchSQL();
+            switch (option) {
+                case "1":
+                    System.out.print("Enter Category:  ");
+                    category = sc.next();
+                    API.API();
+                    break;
+                case "2":
+                    System.out.print("Enter Category for Searching:  ");
+                    categorySearch = sc.next();
+                    JDBC.searchSQL();
+                    break;
+                case "3":
+                    menue =false;
+                    break;
+                }
+            }
         }
     }
-}
