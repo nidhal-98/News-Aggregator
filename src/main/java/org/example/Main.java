@@ -29,6 +29,7 @@ public class Main {
             System.out.println(" -----------");
             System.out.println("[1] Search for Articles by Category");
             System.out.println("[2] Search for Articles by Category from SQL Server");
+            System.out.println("[3] Sort");
             System.out.println("[3] Exit");
             System.out.println("---------------------------------------------------");
             System.out.print("Enter Number:  ");
@@ -45,8 +46,27 @@ public class Main {
                     categorySearch = sc.next();
                     JDBC.searchSQL();
                     break;
-                case "3":
+                case"3":
+                    System.out.println("\n   [1] Date");
+                    System.out.println("   [2] Category A-Z");
+                    System.out.println("-------------------");
+                    System.out.print("Enter Number:  ");
+                    String select = sc.next();
+                    switch (select) {
+                        case "1":
+                            break;
+                        case "2":
+                            break;
+                        default:
+                            System.err.println("Invalid Input");
+                            break;
+                    }
+                    break;
+                case "4":
                     menue =false;
+                    break;
+                default:
+                    System.err.println("Invalid Input");
                     break;
                 }
             }
