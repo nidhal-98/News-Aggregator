@@ -48,14 +48,46 @@ public class Main {
                     break;
                 case"3":
                     System.out.println("\n   [1] Date");
-                    System.out.println("   [2] Category A-Z");
+                    System.out.println("   [2] Category");
                     System.out.println("-------------------");
                     System.out.print("Enter Number:  ");
                     String select = sc.next();
                     switch (select) {
                         case "1":
+                            System.out.println("\n   [1] ASC");
+                            System.out.println("   [2] DESC");
+                            System.out.println("-------------------");
+                            System.out.print("Enter Number:  ");
+                            String select1 = sc.next();
+                            switch (select1) {
+                                case "1":
+                                    JDBC.sortByDataASC();
+                                    break;
+                                case"2":
+                                    JDBC.sortByDataDESC();
+                                    break;
+                                default:
+                                    System.out.println("Invalid Input");
+                                    break;
+                            }
                             break;
                         case "2":
+                            System.out.println("\n   [1] ASC");
+                            System.out.println("   [2] DESC");
+                            System.out.println("-------------------");
+                            System.out.print("Enter Number:  ");
+                            String select2 = sc.next();
+                            switch (select2) {
+                                case "1":
+                                    JDBC.sortByCategoryASC();
+                                    break;
+                                case"2":
+                                    JDBC.sortByCategoryDESC();
+                                    break;
+                                default:
+                                    System.out.println("Invalid Input");
+                                    break;
+                            }
                             break;
                         default:
                             System.err.println("Invalid Input");

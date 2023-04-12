@@ -113,7 +113,7 @@ public class JDBC {
         }
     }
 
-    public static void sortByData(){
+    public static void sortByDataASC(){
         String url = "jdbc:sqlserver://localhost:1433;" + "databaseName=" + Main.databaseName + ";" + "encrypt=true;"
                 + "trustServerCertificate=true";
 
@@ -128,7 +128,165 @@ public class JDBC {
 
             con = DriverManager.getConnection(url, user, pass);
 
-            String sql = "select *\r\n" + "From articles\r\n" + "WHERE Category ='" + Main.categorySearch + "'";
+            String sql = "select *\n" +
+                    "from articles\n" +
+                    "Order by Article_Date ASC";
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+
+                String Article_Title = resultSet.getString("Article_Title");
+
+                String Author = resultSet.getString("Author");
+
+                String Article_Date = resultSet.getString("Article_Date");
+
+                String Category = resultSet.getString("Category");
+
+                String Content = resultSet.getString("Content");
+
+                System.out.print("\tArticle Title: " + Article_Title);
+                System.out.print("\n\tAuthor: " + Author);
+                System.out.print("\n\tArticle Date: " + Article_Date);
+                System.out.print("\n\tCategory: " + Category);
+                System.out.println("\n\tContent: " + Content);
+                for(int j=-9; j<Content.length(); j++){
+                    System.out.print("-");
+                }
+                System.out.println("");
+            }
+
+            statement.close();
+            con.close();
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
+    }
+
+    public static void sortByDataDESC(){
+        String url = "jdbc:sqlserver://localhost:1433;" + "databaseName=" + Main.databaseName + ";" + "encrypt=true;"
+                + "trustServerCertificate=true";
+
+        String user = /* "sa" */ Main.databaseUsername;
+        String pass = /* "root" */ Main.databasePass;
+
+        Connection con = null;
+        try {
+
+            Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+            DriverManager.registerDriver(driver);
+
+            con = DriverManager.getConnection(url, user, pass);
+
+            String sql = "select *\n" +
+                    "from articles\n" +
+                    "Order by Article_Date DESC";
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+
+                String Article_Title = resultSet.getString("Article_Title");
+
+                String Author = resultSet.getString("Author");
+
+                String Article_Date = resultSet.getString("Article_Date");
+
+                String Category = resultSet.getString("Category");
+
+                String Content = resultSet.getString("Content");
+
+                System.out.print("\tArticle Title: " + Article_Title);
+                System.out.print("\n\tAuthor: " + Author);
+                System.out.print("\n\tArticle Date: " + Article_Date);
+                System.out.print("\n\tCategory: " + Category);
+                System.out.println("\n\tContent: " + Content);
+                for(int j=-9; j<Content.length(); j++){
+                    System.out.print("-");
+                }
+                System.out.println("");
+            }
+
+            statement.close();
+            con.close();
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
+    }
+
+    public static void sortByCategoryASC(){
+        String url = "jdbc:sqlserver://localhost:1433;" + "databaseName=" + Main.databaseName + ";" + "encrypt=true;"
+                + "trustServerCertificate=true";
+
+        String user = /* "sa" */ Main.databaseUsername;
+        String pass = /* "root" */ Main.databasePass;
+
+        Connection con = null;
+        try {
+
+            Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+            DriverManager.registerDriver(driver);
+
+            con = DriverManager.getConnection(url, user, pass);
+
+            String sql = "select *\n" +
+                    "from articles\n" +
+                    "Order by Category ASC";
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+
+                String Article_Title = resultSet.getString("Article_Title");
+
+                String Author = resultSet.getString("Author");
+
+                String Article_Date = resultSet.getString("Article_Date");
+
+                String Category = resultSet.getString("Category");
+
+                String Content = resultSet.getString("Content");
+
+                System.out.print("\tArticle Title: " + Article_Title);
+                System.out.print("\n\tAuthor: " + Author);
+                System.out.print("\n\tArticle Date: " + Article_Date);
+                System.out.print("\n\tCategory: " + Category);
+                System.out.println("\n\tContent: " + Content);
+                for(int j=-9; j<Content.length(); j++){
+                    System.out.print("-");
+                }
+                System.out.println("");
+            }
+
+            statement.close();
+            con.close();
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
+    }
+
+    public static void sortByCategoryDESC(){
+        String url = "jdbc:sqlserver://localhost:1433;" + "databaseName=" + Main.databaseName + ";" + "encrypt=true;"
+                + "trustServerCertificate=true";
+
+        String user = /* "sa" */ Main.databaseUsername;
+        String pass = /* "root" */ Main.databasePass;
+
+        Connection con = null;
+        try {
+
+            Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+            DriverManager.registerDriver(driver);
+
+            con = DriverManager.getConnection(url, user, pass);
+
+            String sql = "select *\n" +
+                    "from articles\n" +
+                    "Order by Category DESC";
 
             PreparedStatement statement = con.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
